@@ -1,11 +1,11 @@
 import S from './style.module.sass'
 
  export const CardDevelopers = ({ devs }) => {
-    return (
-        <>
-            <div>card</div>
-            {console.log(devs.name)}
-        </>
-    )
+    console.log(devs)
+    return devs.map(dev => (
+        <div>
+            {dev.name}
+        </div>
+    ))
  }
 

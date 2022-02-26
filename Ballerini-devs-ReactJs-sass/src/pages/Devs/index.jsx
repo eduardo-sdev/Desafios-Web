@@ -9,15 +9,18 @@ import S from './style.module.sass'
 
 const getDatafromLS = () => {
     const data = localStorage.getItem('developers')
-    console.log(':', data)
     if(data) {
+    console.log(':', data)
         return JSON.stringify(data)
     } else {
         return []
     }
 
 }
- export const Devs = () => {
+const foo = getDatafromLS()
+    console.log(':', foo)
+
+export const Devs = () => {
     const [ addDeveloper, setAddDeveloper ] = useState(false)
      return (
       <>
@@ -27,8 +30,7 @@ const getDatafromLS = () => {
                     <Button color='green'>Adicionar Desenvolvedor</Button>
               </button> 
             <div>
-
-            <CardDevelopers devs={getDatafromLS()} />
+            <CardDevelopers devs={foo} />
 
             {addDeveloper && <AddDeveloper getData={getDatafromLS} closeModal={setAddDeveloper}/>}
             </div>

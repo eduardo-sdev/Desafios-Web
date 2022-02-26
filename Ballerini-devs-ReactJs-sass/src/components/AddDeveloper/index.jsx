@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react'
 
 import { Modal } from "../Modal"
 import { Button } from "../Button"
+import { Input } from "../Input"
 
 import S from './style.module.sass'
 
 const getDatafromLS = () => {
     const data = localStorage.getItem('developers')
-    // console.log(':', data)
     if(data) {
-        return JSON.stringify(data)
+        return JSON.parse(data)
     } else {
         return []
     }
@@ -27,7 +27,7 @@ export const AddDeveloper = ({ closeModal }) => {
     
     const handleAddDeveloperSubmit=(e)=>{
         e.preventDefault()
-        let developer={
+        let developer = {
             name, 
             avatar,
             cargo, 
@@ -46,6 +46,7 @@ export const AddDeveloper = ({ closeModal }) => {
     useEffect(()=>{
         localStorage.setItem('developers', JSON.stringify(developers))
     }, [developers])
+
     return (
         <>
             <div className={S.container}>
@@ -53,6 +54,7 @@ export const AddDeveloper = ({ closeModal }) => {
                     <div className='addDeveloper'></div>
                     <form autocompelete="off" onSubmit={handleAddDeveloperSubmit}>
                         <div className={S.formBody}>
+                            <Input label={Nome} placeholder=""/>
                             <label>Nome:</label>
                             <input onChange={(e)=>setName(e.target.value)} value={name} placeholder="*" type="text" required/>
 
