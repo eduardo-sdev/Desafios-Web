@@ -1,0 +1,78 @@
+*,::after,::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: #24292e;
+    color: white;
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+
+.siderbar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1f2428;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.siderbar a {
+    padding: 8px 8px 8px 32px;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 25px;
+    border: none;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.siderbar a:hover {
+    color: #f1f1f1;
+}
+
+.siderbar .closebtn {
+    transition: 0.3s;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+main {
+    margin-left: 250px;
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+main iframe {
+    width: 80vw;
+    height: 100vh;
+}
+
+@media screen and (max-height: 450px) {
+    .siderbar {padding-top: 15px;}
+    .siderbar button {padding-top: 18px;}
+}
