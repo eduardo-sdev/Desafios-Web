@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Cursor</title>
+    <style>
+        html {
+            cursor: none;
+            background-color: #2d2d2d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .cursor {
+            left: 0;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background-color: #f44336;
+            position: absolute;
+            border-radius: 5px;
+        }
+
+        .cursor__follower {
+            transition: transform .4s;
+            width: 6px;
+            height: 6px;
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 10rem;
+            letter-spacing: 12px;
+            line-height: 1;
+            text-align: center;
+        }
+        h1 span {
+            letter-spacing: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>custom <span>cursor</span></h1>
+    <script src="./script.js"></script>
+ </body>
+</html>
