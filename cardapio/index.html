@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardapio</title>
+
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1046/1046747.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cardapio online</h1>
+    </header>
+
+    <main>
+        <div class="title">
+            <h2>Comidas</h2>
+            <span>Fique avontade</span>
+        </div>
+
+        <div class="card">
+
+            <div class="lineInput">
+                <label>Comida</label>
+                <input type="text" id="food" placeholder="Nome no cardapio">
+            </div>
+
+            <div class="lineInput">
+                <label>preço</label>
+                <input type="number" id="price" placeholder="Proço da comida">
+            </div>
+
+            <button id="btn1" onclick="menu.save()">Salvar</button>
+            <button onclick="menu.cansel()">Cancelar</button>
+        </div>
+
+        <div class="content">
+            <table border="1">
+                <thead>
+                    <th class="center">ID</th>
+                    <th>Comida</th>
+                    <th>Preço</th>
+                    <th class="center">Ações</th>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
+
