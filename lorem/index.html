@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gerador lorem</title>
+
+        <link 
+            rel="shortcut icon" 
+            href="https://cdn3.iconfinder.com/data/icons/search-engine-optimization-plus/64/lorem_ipsum_text_generator-512.png" 
+            type="image/x-icon" 
+        />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="generator">
+                <div class="generator-head">
+                    <form id="generator-form">
+                        <div class="gen-value">
+                            <input name="gen_count" class="form-control" min='1' max='100' type="number" value="5" />
+                        </div>
+
+                        <div>
+                            <select name="gen_options" class="form-control">
+                                <option value="paras">paragafos</option>
+                                <option value="sentences">sentences</option>
+                                <option value="words">Palavras</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn" id="gen-btn">Gerar</button>
+                    </form>
+
+                    <button type="button" class="btn" id="copy-btn">
+                        <span>Copiar</span>
+                    </button>
+                </div>
+
+                <div class="generator-body">
+                    <div id="gen-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
+
