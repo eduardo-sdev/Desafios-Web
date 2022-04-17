@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Expanding Cards</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style>
+            *,::before,::after {
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                overflow: hidden;
+                margin: 0;
+            }
+
+            .container {
+                display: flex;
+                width: 90vw;
+            }
+
+            .panel {
+                background-size: auto 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 80vh;
+                border-radius: 50px;
+                color: #fff;
+                flex: 0.5px;
+                margin: 10px;
+                position: relative;
+                cursor: pointer;
+                transition: flex 0.7 ease-in;
+            }
+
+            .panel h3 {
+                font-size: 24px;
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                margin: 0;
+                opacity: 0;
+            }
+
+            .panel.active {
+                flex: 5;
+            }
+
+            .panel.active h3 {
+                opacity: 1;
+                transition: opacity 0.3s ease-in 0.4s;
+            }
+
+            @media(max-width: 480px) {
+                .container {
+                    width: 100vw;
+                }
+
+                .panel:nth-of-type(4),
+                .panel:nth-of-type(5) {
+                    display: none;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div 
+                class="panel active"
+                style="background-image: url('https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')"
+            >
+                <h3>Programmer</h3>
+            </div>
+            <div 
+                class="panel"
+                style="background-image: url('https://images.pexels.com/photos/10404450/pexels-photo-10404450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')"
+            >
+                <h3>Bike Mtb</h3>
+            </div>
+            <div 
+                class="panel"
+                style="background-image: url('https://images.pexels.com/photos/11062703/pexels-photo-11062703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')"
+            >
+                <h3>Bike Mtb</h3>
+            </div>
+            <div 
+                class="panel"
+                style="background-image: url('https://images.pexels.com/photos/2663247/pexels-photo-2663247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')"
+            >
+                <h3>Bike Mtb</h3>
+            </div>
+            <div 
+                class="panel"
+                style="background-image: url('https://images.pexels.com/photos/1921336/pexels-photo-1921336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')"
+            >
+                <h3>Bike Mtb</h3>
+            </div>
+            <div 
+                class="panel"
+                style="background-image: url('https://images.pexels.com/photos/8965699/pexels-photo-8965699.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')"
+            >
+                <h3>Bike Mtb</h3>
+            </div>
+        </div>
+        <script>
+            const panels = document.querySelectorAll('.panel')
+
+            const removeActiveClasses = () => {
+                panels.forEach(panel => {
+                    panel.classList.remove('active')
+                })
+            }
+            
+            panels.forEach(panel => {
+                panel.addEventListener('click', () => {
+                    removeActiveClasses()
+                    panel.classList.add('active')
+                })
+            })
+        </script>
+    </body>
+</html>
+
+<!-- notes  
+
+    html
+        div.conainer
+            div.panel.activeS:bg-url(imgurl) 
+                h3=explore-the-world
+
+    style
+        .container = df/w90vw
+        .painel = bg-size:auto+100% bg-position:center bg-repeat:no-repeat h80vh br50 cFFF cp f0.5 m10 p:relative transi:flex+0.7+ease-in
+            h3 = fz24 p:absolut b20 l20 m0 o0
+            .active = f5
+                h3 = o1 transi:opacity 0.3s ease-in 0.4s
+        @m mxw480 = .container = w100vw x2(.painel:nth-of-type(4 && 5):dn)
+
+    js
+        getAll panels
+
+        panels.forEach
+            evenetClick
+                removeActiveClasses()
+                classlist.add(active)
+
+        func removeActiveClasses 
+            forEach
+                classlist.remove(active)
+
+-->
+
