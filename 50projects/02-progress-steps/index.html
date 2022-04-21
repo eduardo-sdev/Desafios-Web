@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Progress Steps</title>
+
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="progress-container">
+                <div class="progress" id="progress"></div>
+                <div class="circle active">1</div>
+                <div class="circle">2</div>
+                <div class="circle">3</div>
+                <div class="circle">4</div>
+            </div>
+
+            <button class="btn" id="prev" disabled>Prev</button>
+            <button class="btn" id="next">Next</button>
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
+
+<!-- notes
+    html
+        div.container
+            div.progress-conteiner
+                div.progress#progress
+                div.circle.active = 1
+                div.circle = 2
+                div.circle = 3
+                div.circle = 4
+            button.btn#prev desible = Prev
+            button.btn#next = Next
+    css
+        :root = --line-border-fill:#3498db --line-border-empty:#e0e0e0
+        .container = tac
+
+        .progress-container = df jcsb pr mb30px mxw100% w250px 
+
+        .progress-container::before conte:'' bg:var(--line-border-empty) pa t50% l0 transf:translateY(-50%) h4px w100% z:-1
+
+        .progress bg:var(--line-border-fill) pa t50% l0 transf:translateY(-50%) h4px w0% z:-1 transi:0.4s+ease
+
+
+
+        .circle = bgc#fff c#999 br50% h30px w30px df aic jcc b:3px+solid+#e0e0e0 transi:.4s+ease
+
+        .circle.active = bc#var(line-border-fill)
+
+
+
+        .btn = bgc:v(--line-border-fill) c#fff bd0 br:6px cp p8px:30px m5px fz:14px
+
+        .btn:active = trsf:scale(0.98)
+
+        .btn:focus = outl:0
+
+        .btn:disabled = bgc:v(--line-border-empty) curs:not-allowed
+
+
+    js
+
+        get id pregress / prev / next and allclass .circle
+
+        l currentActive = 1
+
+        next evnetclick
+            currentActive++
+            if currentActive > circles.lenght
+                currentActive = circles.lenght
+
+        prev evnetclick
+            currentActive--
+            if currentActive < 1
+                currentActive = 1
+
+        func update
+            circles.forEach circle/idx
+                if idx< currentActive
+                    circle.classList.add 'active'
+
+                else
+                    circle.classList.remove 'active'
+
+            getall actives .active
+
+            progress.style.width = (actives.lenght - 1)  / (circles.lenght - 1) * 100 + '%'
+
+            if currentActive === 1
+                prev.disabled = true
+            else if currentActive === circle.lenght
+                next.disabled = true
+            else
+                prev.disabled = false
+                next.disabled = false
+-->
